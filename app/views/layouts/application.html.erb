@@ -7,9 +7,37 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="header-container"> 
+<header class="wrapper"> 
+			<h1 id="title">ToppyQuest</h1> 
+			<b>This is the question board for Toppy</b>
+			<h2>He has no rules ... yet.</h2>
+			<nav> 
+				<ul> 
+					<li><%= link_to "???...", posts_path %></li> 
+					<li><%= link_to "fake", root_path %></li> 
+					<li><a href="#">navigation</a></li> 
+					<li><a href="#">links</a></li> 
+				</ul> 
+			<br /><img src="http://i.imgur.com/PkNZP.jpg" />
+			</nav> 
+		</header> 
 
+<div id="main" class="wrapper"> 
+		<aside> 
+			<h3></h3> 
+		</aside> 
+<article>
 <%= params %>
 <%= yield %>
+</article>
 
-</body>
+	<div id="footer-container"> 
+		<footer class="wrapper"> 
+			<h3>Make good Choices!</h3> 
+		</footer> 
+	</div>
+</div>
+
 </html>
+
