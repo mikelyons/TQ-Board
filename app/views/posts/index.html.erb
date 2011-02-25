@@ -1,24 +1,16 @@
 <h1>TOPPY'S QUESTIONS</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to ':-', post %></td>
-    <td><%= link_to '?!', edit_post_path(post) %></td>
-    <td><%= link_to 'x.', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<div id=builder>
+		<div class="postcard">
+    <%= post.name %>
+    <h3><%= post.title %></h3>
+    <p><%= post.content %></p>
+    <%= link_to ' : ', post %>
+    <%= link_to ' ? ', edit_post_path(post) %>
+    <%= link_to ' x ', post, :confirm => 'Are you sure?', :method => :delete %>
+		</div>
 <% end %>
 </table>
 

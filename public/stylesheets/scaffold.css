@@ -161,6 +161,7 @@ body{
 	        box-shadow:0 0 40px #AAA;
 }
 
+
 h2, h3{
 	margin:30px 0;
 }
@@ -230,6 +231,7 @@ aside{
 }
 
 article header{
+	font-size: 20pt;
 	margin-bottom:50px;
 	padding-bottom:30px;
 	width:700px;
@@ -238,6 +240,9 @@ article header{
 	        box-shadow:0 45px 60px -60px #AAA;
 }
 
+a{
+	text-decoration:none;
+}
 
 #builder a{
 	display:block;
