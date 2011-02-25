@@ -1,18 +1,18 @@
-<h1>TOPPY'S QUESTIONS</h1>
 
 
 <% @posts.each do |post| %>
-	<div id=builder>
-		<div class="postcard">
-    <%= post.name %>
-    <h3><%= post.title %></h3>
-    <p><%= post.content %></p>
-    <%= link_to ' : ', post %>
-    <%= link_to ' ? ', edit_post_path(post) %>
-    <%= link_to ' x ', post, :confirm => 'Are you sure?', :method => :delete %>
-		</div>
+		<article> 
+			<header>
+				<h4><%= post.title %></h4>
+				by: <%= post.name %>
+
+				<p><%= post.content %></p>
+				<%= link_to ' : ', post %>
+				<%= link_to ' ? ', edit_post_path(post) %>
+				<%= link_to ' x ', post, :confirm => 'Are you sure?', :method => :delete %>
+			</header>
+		</article>
 <% end %>
-</table>
 
 <br />
 
