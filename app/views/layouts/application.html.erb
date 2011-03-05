@@ -23,21 +23,37 @@
 <body> 
 		<div id="header-container">
 <header class="wrapper"> 
-			<h1 id="title">Toppy Quest</h1> 
+      <h1 id="title">Toppy Quest</h1> 
 			<nav> 
 				<ul> 
 					<li><%= link_to "Questions", posts_path %></li> 
-					<li><%= link_to "Home Pades", root_path %></li> 
+					<li><%= link_to "Register", new_user_path %></li> 
+					<li><%= link_to "About Us", root_path %></li> 
 					<li><a href="#">navigation</a></li> 
-					<li><a href="#">links</a></li> 
+					<li><a href="#">navigation</a></li> 
 				</ul> 
 			</nav> 
 		</header> 
 	</div> 
 	<div id="main" class="wrapper"> 
 		<aside> 
-			<h3>Something aside</h3> 
-		</aside> 
+      <h3>Something aside</h3> 
+    </aside> 
+
+    <div id="user_nav">
+      <% if current_user %>
+        Logged in as <%= current_user.email %>
+        <%= link_to "Log Out", log_out_path %>
+      <% else %>
+        <%= link_to "Sign up", sign_up_path %> or
+        <%= link_to "Log in", log_in_path %>
+      <% end %>
+    </div>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash#{name}" %>
+    <% end %>
+
 		<%= yield %>
 	</div> 
 	<div id="footer-container"> 
