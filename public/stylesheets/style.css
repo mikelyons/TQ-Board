@@ -229,8 +229,8 @@ aside{
 }
 
 article header{
-	margin-bottom:50px;
-	padding-bottom:30px;
+	margin-bottom:0px;
+	padding-bottom:0px;
 	width:700px;
 	-webkit-box-shadow:0 45px 60px -60px #AAA;
 	   -moz-box-shadow:0 45px 60px -60px #AAA;

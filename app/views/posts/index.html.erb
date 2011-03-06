@@ -4,13 +4,17 @@
 		<article> 
 			<header>
 				<h4><%= post.title %></h4>
-				by: <%= post.name %>
-
-				<p><%= post.content %></p>
-				<%= link_to ' : ', post %>
-				<%= link_to ' ? ', edit_post_path(post) %>
-				<%= link_to ' x ', post, :confirm => 'Are you sure?', :method => :delete %>
+        by: <%= post.name %><br />
 			</header>
+				<p><%= post.content %></p>
+        <%= link_to ' View ', post %><br />
+				<%= link_to ' Edit ', edit_post_path(post) %><br />
+				<%= link_to '  ', post, :confirm => 'Are you sure?', :method => :delete %><br />
+      <iframe src="http://www.facebook.com/plugins/like.php?href=mrldmg.com/posts/<%= post.id %>&amp;
+        layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;
+        font=verdana&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" 
+        style="border:none; overflow:hidden; width:450px; height:21px;" 
+        allowTransparency="true"></iframe>
 		</article>
 <% end %>
 

@@ -14,7 +14,15 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
-
+      <iframe src="http://www.facebook.com/plugins/like.php?
+        href=mrldmg.com/posts/<%= @post.id %>&amp;
+        layout=standard&amp;
+        show_faces=true&amp;
+        width=450&amp;height=80&amp;
+        action=like&amp;font=arial&amp;
+        colorscheme=light" 
+        scrolling="no" frameborder="0" 
+        style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>
 
 <%= link_to '!?', edit_post_path(@post) %> |
 <%= link_to '<=', posts_path %>
