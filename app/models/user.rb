@@ -7,11 +7,19 @@ class User < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
+  validates_confirmation_of :password, :on => :create
+  #validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "Invalid email"
   validates_uniqueness_of :email
+
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.email = auth["info"]["email"]
+    end
+  end
 
   def self.authenticate(email, password)
     user = find_by_email(email)
@@ -28,6 +36,7 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
+
 end
 
 
