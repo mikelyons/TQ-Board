@@ -8,6 +8,7 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use unicorn as the web server
 # gem 'unicorn'
